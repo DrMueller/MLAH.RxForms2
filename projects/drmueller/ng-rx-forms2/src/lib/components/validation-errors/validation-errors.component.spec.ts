@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgRxForms2Component } from './ng-rx-forms2.component';
+import { ValidationErrorsComponent } from './validation-errors.component';
 
-describe('NgRxForms2Component', () => {
-  let component: NgRxForms2Component;
-  let fixture: ComponentFixture<NgRxForms2Component>;
+describe('ValidationErrorsComponent', () => {
+  let component: ValidationErrorsComponent;
+  let fixture: ComponentFixture<ValidationErrorsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgRxForms2Component ]
+      declarations: [ ValidationErrorsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgRxForms2Component);
+    fixture = TestBed.createComponent(ValidationErrorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
