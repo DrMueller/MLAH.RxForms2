@@ -37,7 +37,7 @@
       <div class="form-fields-row">
         <mat-form-field>
           <mat-select placeholder="Gender" formControlName="gender">
-            <mat-option *ngFor="let item of genders | enumKeyValuePair" [value]="item.key">{{item.value}}
+            <mat-option *ngFor="let item of genders | splitEnum" [value]="item.key">{{item.value}}
             </mat-option>
           </mat-select>
         </mat-form-field>
