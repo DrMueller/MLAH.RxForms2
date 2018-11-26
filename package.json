@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-lib-prod": "ng build @drmueller/ng-base-directives --prod",
+    "unit-test-lib": "ng run @drmueller/ng-base-directives:unit-test"
   },
   "private": true,
   "dependencies": {
