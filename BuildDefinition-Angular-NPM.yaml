@@ -3,18 +3,20 @@ name: 2.0$(rev:.r) # build numbering format
 resources:
 - repo: self
 queue:
-  name: Default
+  name: Hosted VS2017
   demands: npm
 
+variables:
+  LibraryName: 'ng-base-directives'
 steps:
 - task: Npm@1
-  displayName: Install
+  displayName: 'NPM Install'
   inputs:
     verbose: false
 
 
 - task: Npm@1
-  displayName: 'NG Lint'
+  displayName: 'NPM NG Lint'
   inputs:
     command: custom
 
@@ -22,29 +24,50 @@ steps:
 
     customCommand: 'run ng lint'
 
-- task: powershell@2
-  displayName: 'Update Package Version'
-  inputs:
-    targetType: filePath
-    filePath: './scripts/UpdatePackageVersion.ps1'
-    arguments: '-buildVersion $(Build.BuildNumber)'
-
-- task: powershell@2
-  displayName: 'Build and Pack'
-  inputs:
-    targetType: filePath
-    filePath: './scripts/BuildAndPack.ps1'
 
 - task: Npm@1
-  displayName: Publish
+  displayName: 'NPM NG Unit Tests'
   inputs:
     command: custom
 
-    workingDir: publish
+    verbose: false
+
+    customCommand: 'run unit-test-lib'
+
+  enabled: false
+
+- task: Npm@1
+  displayName: 'NPM Build Prod'
+  inputs:
+    command: custom
 
     verbose: false
 
-    customCommand: 'publish export.tgz --access public'
+    customCommand: 'run build-lib-prod'
+
+
+- task: Npm@1
+  displayName: 'NPM Update Version'
+  inputs:
+    command: custom
+
+    workingDir: 'dist/drmueller/$(LibraryName)'
+
+    verbose: false
+
+    customCommand: 'version $(Build.BuildNumber)'
+
+
+- task: Npm@1
+  displayName: 'NPM Publish'
+  inputs:
+    command: custom
+
+    workingDir: 'dist/drmueller/$(LibraryName)'
+
+    verbose: false
+
+    customCommand: 'publish --access public'
 
     customEndpoint: 'NPM-DrMueller'
 
