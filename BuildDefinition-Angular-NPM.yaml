@@ -7,7 +7,7 @@ queue:
   demands: npm
 
 variables:
-  LibraryName: 'ng-base-directives'
+  LibraryName: 'ng-rx-forms2'
 steps:
 - task: Npm@1
   displayName: 'NPM Install'
