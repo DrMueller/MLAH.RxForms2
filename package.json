@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib-prod": "ng build @drmueller/ng-base-directives --prod",
-    "unit-test-lib": "ng run @drmueller/ng-base-directives:unit-test"
+    "build-lib-prod": "ng build @drmueller/ng-rx-forms2 --prod",
+    "unit-test-lib": "ng run @drmueller/ng-rx-forms2:unit-test"
   },
   "private": true,
   "dependencies": {
