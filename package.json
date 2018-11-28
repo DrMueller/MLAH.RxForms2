@@ -26,7 +26,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@drmueller/language-extensions": "^2.0.6",
-    "@drmueller/ng-base-directives": "^2.0.23",
+    "@drmueller/ng-base-directives": "^2.0.9",
     "@drmueller/ng-material-extensions": "^2.0.10",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",

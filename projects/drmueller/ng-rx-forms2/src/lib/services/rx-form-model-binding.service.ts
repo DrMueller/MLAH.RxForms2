@@ -9,9 +9,7 @@ export class RxFormModelBindingService {
     const controlKeys = Object.keys(formGroup.controls);
 
     controlKeys.forEach(ck => {
-      if (model.hasOwnProperty(ck)) {
-        model[ck] = <any>formGroup.controls[ck].value;
-      }
+      model[ck] = <any>formGroup.controls[ck].value;
     });
   }
 

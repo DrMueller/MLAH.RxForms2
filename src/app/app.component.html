@@ -1,10 +1,9 @@
 <mat-card class="mat-card">
   <mat-card-title>Actions</mat-card-title>
   <mat-card-content>
-    <button mat-raised-button [disabled]="!formGroup.valid" (click)="save()" color="primary">Save</button>
+    <button mat-raised-button drmCommandButton [command]="saveCommand" color="primary">Save</button>
   </mat-card-content>
 </mat-card>
-
 
 <mat-card>
   <mat-card-title>Individual</mat-card-title>
@@ -42,8 +41,6 @@
           </mat-select>
         </mat-form-field>
       </div>
-
-
     </form>
   </mat-card-content>
 </mat-card>

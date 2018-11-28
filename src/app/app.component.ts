@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Individual } from './models/individual.model';
 import { Gender } from './models/gender.model';
 import { RxFormModelBindingService } from '../../projects/drmueller/ng-rx-forms2/src/public_api';
+import { RelayCommand } from '@drmueller/ng-base-directives';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ import { RxFormModelBindingService } from '../../projects/drmueller/ng-rx-forms2
 export class AppComponent implements OnInit {
   public formGroup: FormGroup;
   public genders = Gender;
-
   public individual: Individual;
+  public saveCommand: RelayCommand;
 
   public constructor(private formBuilder: FormBuilder, private binder: RxFormModelBindingService) {
     this.formGroup = this.formBuilder.group({
@@ -26,6 +27,8 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    this.saveCommand = new RelayCommand(() => this.save(), () => this.formGroup.dirty && this.formGroup.valid);
+
     this.individual = <Individual>{
       birthdate: new Date(1986, 12, 29),
       firstName: 'Matthias',
