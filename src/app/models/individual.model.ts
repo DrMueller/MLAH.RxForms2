@@ -1,9 +1,7 @@
-import { Gender } from './gender.model';
+import { BaseData } from './base-data.model';
+import { Address } from './address.model';
 
 export class Individual {
-  public firstName: string;
-  public lastName: string;
-  public birthdate: Date;
-  public height: number;
-  public gender: Gender;
+  public baseData: BaseData;
+  public addresses: Address[];
 }

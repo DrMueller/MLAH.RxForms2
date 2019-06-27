@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>Addresses</mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let adrFormGroup of formArray.controls; let i = index">
+      <form class="example-form" [formGroup]="adrFormGroup">
+        <div class="form-fields-row">
+          <div class="form-field">
+            <mat-form-field>
+              <input matInput type="text" class="form-control" placeholder="Enter street name"
+                formControlName="streetName">
+            </mat-form-field>
+            <drm-validation-errors [formControlToValidate]="adrFormGroup.controls['streetName']">
+            </drm-validation-errors>
+          </div>
+
+          <div class="form-field">
+            <mat-form-field>
+              <input matInput type="text" class="form-control" placeholder="Enter city name" formControlName="cityName">
+            </mat-form-field>
+            <drm-validation-errors [formControlToValidate]="adrFormGroup.controls['cityName']"></drm-validation-errors>
+          </div>
+
+          <div class="form-field">
+            <mat-form-field>
+              <input matInput type="number" class="form-control" placeholder="Enter ZIP" formControlName="zip">
+            </mat-form-field>
+            <drm-validation-errors [formControlToValidate]="adrFormGroup.controls['zip']"></drm-validation-errors>
+          </div>
+
+          <button class="delete-button" mat-button (click)="deleteAddress(i)">
+            <mat-icon color="warn">delete_outline</mat-icon>
+          </button>
+
+        </div>
+      </form>
+
+    </div>
+  </mat-card-content>
+</mat-card>

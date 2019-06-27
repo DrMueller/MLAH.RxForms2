@@ -4,7 +4,6 @@ import { FormControl } from '@angular/forms';
 import { VALIDATION_ERROR_MAPPER_TOKEN } from './error-mappers/constants';
 import { IValidationErrorMapperService } from './error-mappers/validation-error-mapper-service.interface';
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,0 +1,23 @@
+.form-fields-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .form-field {
+    margin-right: 10px;
+    flex-basis: auto;
+  }
+
+  .form-field-id {
+    display: none;
+  }
+
+  .delete-button {
+      height: 30px;
+      width: 30px;
+      padding: 0px;
+      margin: 0px;
+      min-width: 0;
+      min-height: 0;
+  }
