@@ -14,6 +14,7 @@
           <mat-form-field>
             <input matInput type="text" class="form-control" placeholder="Enter last name" formControlName="lastName">
           </mat-form-field>
+          <drm-validation-errors [formControlToValidate]="formGroup.controls['lastName']"></drm-validation-errors>
         </div>
 
         <div class="form-field">
@@ -23,6 +24,7 @@
             <mat-datepicker-toggle matSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
             <mat-datepicker #birthDatePicker></mat-datepicker>
           </mat-form-field>
+          <drm-validation-errors [formControlToValidate]="formGroup.controls['birthdate']"></drm-validation-errors>
         </div>
 
         <div class="form-field">
