@@ -9,13 +9,14 @@ import { RxFormModelBindingService } from './services/rx-form-model-binding.serv
 import { RxErrorStateMatcherService } from './services/rx-error-state-matcher.service';
 import { VALIDATION_ERROR_MAPPER_TOKEN } from './services/error-mappers/constants';
 import { MinLengthErrorMapperService } from './services/error-mappers/min-length-error-mapper.service';
+import { ValidationErrorsDirective } from './directives/validation-errors.directive';
 
 @NgModule({
   imports: [
     CommonModule,
     MatFormFieldModule
   ],
-  declarations: [ValidationErrorsComponent],
+  declarations: [ValidationErrorsComponent, ValidationErrorsDirective],
   exports: [ValidationErrorsComponent]
 })
 
